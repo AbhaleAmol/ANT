@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name = "ANTFirstEcho" basedir = ".">
+	
+	<target name = "welcome">
+		<echo>Welcome to ANT</echo>
+	</target>
+	
+</project>
