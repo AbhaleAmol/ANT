@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name = "CompilingJAVAClass" basedir = "." default = "compile">
+
+	<target name = "clean-dir">
+		<delete dir = "build/classes"/>
+		<delete dir = "build" />
+	</target>
+	
+	<target name = "make-dir" depends = "clean-dir">
+		<mkdir dir = "build" />
+		<mkdir dir = "build/classes"/>
+	</target>
+	
+	<target name = "compile" depends = "make-dir">
+		<javac srcdir = "src" destdir = "build/classes"/>
+	</target>
+	
+</project>
