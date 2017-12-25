@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="UserDefinedVariables" basedir="." default="init">
+
+	<property name="build.dir" value="build"/>
+	<property name="classes.dir" value="${build.dir}${file.separator}classes"/>
+	<property name="src.dir" value="src"/>
+	
+	<target name="init" depends="clean-dir, make-dir, compile, execute"/>
+	
+	<target name="clean-dir">
+		<delete dir="${classes.dir}"/>
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<target name="make-dir">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${classes.dir}"/>
+	</target>
+	
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+	</target>
+	
+	<target name="execute">
+		<java classname="com.datatypes.test.Test" classpath="${classes.dir}"/>
+	</target>
+	
+</project>
